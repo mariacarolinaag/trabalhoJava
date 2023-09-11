@@ -1,0 +1,98 @@
+//CLASSE CLIENTE
+package orientacao_objetos;
+public class Cliente {
+	//atributos
+   String nome;
+   String telefone;
+   String email;
+   String endereco;   
+    
+}
+
+//CLASSE CONTA
+package orientacao_objetos;
+
+public class Conta {
+	//atributos
+    double nroConta;
+    double saldo;
+    String nomeTitular;
+    
+    //construtores sem parâmetro
+    Conta (){
+    	
+    	
+    }
+    //construtores com parâmetro
+    Conta (double nroConta, double saldo, String nomeTitular){
+    	this.nroConta = nroConta;
+    	this.saldo = saldo;
+    	this.nomeTitular = nomeTitular;
+    }
+
+}
+
+//CLASSE CONTA SALARIO
+package orientacao_objetos;
+
+public class ContaSalario extends Conta {
+	double consultarSaldo;
+	public Cliente cliente;
+
+	public ContaSalario (double nroConta, double saldo, String nomeTitular, double consultarSaldo, Cliente cliente) {
+		super(nroConta, saldo, nomeTitular);
+		this.consultarSaldo = consultarSaldo;
+		this.cliente = cliente;			
+		}
+	
+	public void setconsultarSaldo(double consultarSaldo) {
+		this.consultarSaldo = consultarSaldo;
+	}
+	public String consultarSaldo() {
+		return "Nome: " + cliente + "Saldo atual da conta" + consultarSaldo();
+		}
+}
+
+
+//CLASSE CONTA CORRENTE
+package orientacao_objetos;
+
+public class ContaCorrente extends Conta {
+
+double depositar;
+double saldoAnterior;
+
+public ContaCorrente (double nroConta, double saldo, String nomeTitular, double depositar) {
+	super(nroConta, saldo, nomeTitular);
+	this.depositar = depositar;
+		
+	}
+
+public void depositar () {
+	this.depositar = depositar;
+	this.saldoAnterior = saldoAnterior;
+}
+
+
+}
+
+//EXECUTAR
+package orientacao_objetos;
+
+public class ExecutarOperacao {
+
+	public static void main(String[] args) {
+		Cliente cliente1 = new Cliente();
+		
+		cliente1.nome = "Maria Carolina";
+		cliente1.telefone = "999075951";
+		cliente1.email = "mariacarolina@gmail.com";
+		cliente1.endereco = "Rua Luiz Freddo";
+		
+		System.out.println();
+		
+		
+
+	}
+
+}
