@@ -52,5 +52,37 @@ public void sacar (double valorSaque) {
 
 }
 	
+
+// EXECUTAR OPERACAO
+
+public class ExecutarOperacao {
+
+	public static void main(String[] args) {
+		
+		Cliente cliente = new Cliente("Maria Carolina","99907-5951","mariacarolina@web.com","Rua Luiz Fredo"); //cria cliente
+		
+		ContaCorrente contaCorrente = new ContaCorrente(1234,12.75,"Maria Carolina"); //cria conta corrente
+		
+		ContaSalario contaSalario = new ContaSalario(1234,12.75,"Maria Carolina", Cliente); //cria conta salario
+		
+		
+		//operacoes 
+		contaCorrente.depositar(200.00);
+		contaCorrente.sacar(50.00);
+		System.out.println("Detalhes Conta Corrente: ");
+		System.out.println(contaCorrente);
+		
+		contaSalario.consultarSaldo();
+		System.out.println("Detalhes Conta Salário: ");
+		System.out.println(contaSalario);
+		
 	
+		
+		
+		
+		
+		
+	}
+
+}
 
