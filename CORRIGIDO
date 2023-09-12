@@ -1,0 +1,56 @@
+//CONTA SALARIO CORRIGIDA
+package orientacao_objetos;
+
+public class ContaSalario extends Conta {
+	Cliente cliente1 = new Cliente(); //novo objeto
+	
+	public ContaSalario (double nroConta, double saldo, String nomeTitular, double consultarSaldo, Cliente cliente) {
+		super(nroConta, saldo, nomeTitular);
+		this.cliente1 = cliente;			
+		}
+	
+	public void consultarSaldo() {
+		System.out.println("Cliente: " + cliente1.nome);
+		System.out.println("Saldo conta: " + saldo);
+		return;
+	}
+		
+
+	
+	
+
+
+}
+	
+
+//CONTA CORRENTE CORRIGIDA
+package orientacao_objetos;
+
+public class ContaCorrente extends Conta {
+
+public double saldoAnterior;
+public double saldoAnteriorSaque;
+
+public ContaCorrente (double nroConta, double saldo, String nomeTitular, double depositar) {
+	super(nroConta, saldo, nomeTitular);
+		
+	}
+
+public void depositar (double valorDep) {
+	saldoAnterior = saldo;
+	saldo += valorDep;
+	System.out.println("Saldo Anterior: " + saldo);
+	System.out.println("Saldo Atual: " + this.saldo); //this referencia de onde eu instanciei 
+	
+}
+public void sacar (double valorSaque) {
+	saldoAnteriorSaque = saldo;
+	saldo -= valorSaque;
+	System.out.println("Saldo Anterior: " + saldo);
+	System.out.println("Saldo Atual após saque:" + this.saldo); 
+}
+
+}
+	
+	
+
