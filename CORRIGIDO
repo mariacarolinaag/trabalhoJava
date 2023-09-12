@@ -1,3 +1,34 @@
+// CLIENTE
+public class Cliente {
+	//atributos
+	String nome;
+	   String telefone;
+	   String email;
+	   String endereco; 
+}
+
+
+// CONTA
+public class Conta {
+		//atributos
+	    double nroConta;
+	    double saldo;
+	    String nomeTitular;
+	    
+	    //construtores sem parâmetro
+	    Conta (){
+	    	
+	    	
+	    }
+	    //construtores com parâmetro
+	    Conta (double nroConta, double saldo, String nomeTitular){
+	    	this.nroConta = nroConta;
+	    	this.saldo = saldo;
+	    	this.nomeTitular = nomeTitular;
+	    }
+
+	}
+
 //CONTA SALARIO CORRIGIDA
 package orientacao_objetos;
 
@@ -15,11 +46,6 @@ public class ContaSalario extends Conta {
 		return;
 	}
 		
-
-	
-	
-
-
 }
 	
 
@@ -46,12 +72,18 @@ public void depositar (double valorDep) {
 public void sacar (double valorSaque) {
 	saldoAnteriorSaque = saldo;
 	saldo -= valorSaque;
-	System.out.println("Saldo Anterior: " + saldo);
-	System.out.println("Saldo Atual após saque:" + this.saldo); 
+	
+	if (saldoAnteriorSaque > valorSaque) {
+		System.out.println("Saldo Anterior: " + saldo);
+		System.out.println("Saldo Atual após saque:" + this.saldo);
+	}
+	else {
+		System.out.println("Saldo insuficiente para realizar o saque");
+	}
 }
 
 }
-	
+
 
 // EXECUTAR OPERACAO
 
